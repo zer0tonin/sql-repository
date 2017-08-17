@@ -1,0 +1,18 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "valid-jsdoc": 1,
+    "require-jsdoc": ["error", {
+        "require": {
+            "FunctionDeclaration": false,
+            "MethodDefinition": true,
+            "ClassDeclaration": true,
+            "ArrowFunctionExpression": false
+        }
+    }]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "sql-repository",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A simple Knex based implementation of the repository pattern for Node.js",
   "main": "index.js",
   "scripts": {

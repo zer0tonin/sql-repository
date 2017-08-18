@@ -39,5 +39,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0"
+  },
+  "peerDependencies": {
+    "knex": "^0.13.0"
   }
 }

@@ -5,15 +5,22 @@
 export default class Repository {
   /**
    * Initialize the Repository 
-   * @param {object} dependencies The knex instance
+   * @constructor
+   * @param {object} db The knex instance
    * @param {string} table The name of the SQL table
    * @param {function} constructor The constructor for the associated model
-   * @param {function} dataToPersist
+   * @param {function} [dataToPersist=data => data]
    * Tells which data should be persisted in database for a given object
-   * @param {function} formatDataForConstructor
+   * @param {function} [formatDataForConstructor=data => data]
    * Change data format from database to constructor (ie. start_date -> startDate)
    */
-  constructor(db, table, constructor, dataToPersist, formatDataForConstructor) {
+  constructor(
+    db,
+    table,
+    constructor,
+    dataToPersist = data => data,
+    formatDataForConstructor = data => data,
+  ) {
     this.db = db;
     this.table = table;
     this.constructor = constructor;

@@ -120,64 +120,64 @@ const fooRepository = new Repository(db, 'foo', Foo, dataToPersist, formatDataFo
 Abstracts CRUD operations with the database,
 to allow easier implementation of the pattern
 
-##### constructor
+#### constructor
 
 Initialize the Repository
 
-**Parameters**
+*Parameters*
 
--   `db` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** The knex instance
--   `table` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the SQL table
--   `constructor` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** The constructor for the associated model
--   `dataToPersist` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** Tells which data should be persisted in database for a given object (optional, default `data`)
--   `formatDataForConstructor` **[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** Change data format from database to constructor (ie. start_date -> startDate) (optional, default `data`)
+-   `db` *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* The knex instance
+-   `table` *[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)* The name of the SQL table
+-   `constructor` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* The constructor for the associated model
+-   `dataToPersist` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* Tells which data should be persisted in database for a given object (optional, default `data`)
+-   `formatDataForConstructor` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* Change data format from database to constructor (ie. start_date -> startDate) (optional, default `data`)
 
-##### load
+#### load
 
 Loads an entity from the given id
 
-**Parameters**
+*Parameters*
 
--   `id` **int** The object's id
+-   `id` *int* The object's id
 
-Returns **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** The corresponding entity
+Returns *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* The corresponding entity
 
-##### list
+#### list
 
 Lists the entities
 
-**Parameters**
+*Parameters*
 
--   `whereClause` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Conditions (optionnal) (optional, default `{}`)
+-   `whereClause` *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* Conditions (optionnal) (optional, default `{}`)
 
-Returns **[array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** A list of entities
+Returns *[array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)* A list of entities
 
-##### create
+#### create
 
 Persists a new entity in database
 
-**Parameters**
+*Parameters*
 
--   `object` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** The entity to persist
+-   `object` *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* The entity to persist
 
-Returns **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** An entity, with a database generated id
+Returns *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* An entity, with a database generated id
 
-##### update
+#### update
 
 Updates an enitity in database
 
-**Parameters**
+*Parameters*
 
--   `object` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** The entity to persist in database
+-   `object` *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* The entity to persist in database
 
-Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if the operation was a success
+Returns *[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)* True if the operation was a success
 
-##### delete
+#### delete
 
 Deletes an entity from database
 
-**Parameters**
+*Parameters*
 
--   `id` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The entity's id
+-   `id` *[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)* The entity's id
 
-Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** True if the operation was a success
+Returns *[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)* True if the operation was a success

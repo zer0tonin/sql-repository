@@ -20,7 +20,7 @@ yarn add sql-repository
 Sql-repository is supposed to work alongside a [Knex](http://knexjs.org) installation. So please run :
 
 ```
-npm isntall knex --save
+npm install knex --save
 ```
 
 or 
@@ -72,7 +72,7 @@ const foos = fooRepository.list();
 To avoid repeating yourself it can be useful to create a class inheriting from sql-repository:
 
 ```javascript
-class FooRepository {
+class FooRepository extends Repository {
   constructor(db) {
     super(db, 'foo', Foo);
   }
@@ -84,26 +84,23 @@ const foos = fooRepository.list();
 
 The constructor will take two additionnal optionnal parameters:
 * dataToPersist: a function allowing you to select which property to persists and how to map it to the database columns.
+* formatDataForConstructor: a function allowing you to map data from the database columns to the object expected by your model's constructor.
 
-Example: 
+Example:
 
 ```javascript
 const dataToPersist = foo => ({
   name: foo.name,
   bar_id: foo.bar,
 });
-```
 
-* formatDataForConstructor: a function allowing you to map data from the database columns to the object expected by your model's constructor.
-
-Example:
-
-```javascript
 const formatDataForConstructor = data => ({
   id: data.id,
   name: data.name,
   bar: data.bar_id,
 });
+
+const fooRepository = new Repository(db, 'foo', Foo, dataToPersist, formatDataForConstructor);
 ```
 
 ## Methods

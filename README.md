@@ -40,7 +40,7 @@ You can directly instanciated a repository like this :
 
 ```javascript
 import Repository from 'sql-repository';
-import 'knex' from 'knex';
+import knex from 'knex';
 
 const db = knex({
     client: 'postgresql',
@@ -129,8 +129,8 @@ Initialize the Repository
 -   `db` *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* The knex instance
 -   `table` *[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)* The name of the SQL table
 -   `constructor` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* The constructor for the associated model
--   `dataToPersist` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* Tells which data should be persisted in database for a given object (optional, default `data`)
--   `formatDataForConstructor` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* Change data format from database to constructor (ie. start_date -> startDate) (optional, default `data`)
+-   `dataToPersist` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* Tells which data should be persisted in database for a given object (optional, default `data=>data`)
+-   `formatDataForConstructor` *[function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)* Change data format from database to constructor (ie. start_date -> startDate) (optional, default `data=>data`)
 
 #### load
 
@@ -148,7 +148,7 @@ Lists the entities
 
 *Parameters*
 
--   `whereClause` *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* Conditions (optionnal) (optional, default `{}`)
+-   `whereClause` *[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)* Conditions (optional, default `{}`)
 
 Returns *[array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)* A list of entities
 
